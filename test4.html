@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trends Test</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f2f5fa;
+}
+
+header{
+background:#0d6efd;
+color:white;
+text-align:center;
+padding:18px;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:15px;
+}
+
+.question{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+button{
+width:100%;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#0d6efd;
+color:white;
+cursor:pointer;
+}
+
+button:hover{background:#0b5ed7;}
+
+#result{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>AI Trends & Tools Test — 4</header>
+
+<div class="container">
+<form id="quizForm">
+
+<div class="question">
+<p>1. ChatGPT is considered:</p>
+<label><input type="radio" name="q1" value="0"> Robotics AI</label><br>
+<label><input type="radio" name="q1" value="1"> Generative AI</label><br>
+<label><input type="radio" name="q1" value="0"> Mechanical AI</label><br>
+<label><input type="radio" name="q1" value="0"> Industrial AI</label>
+</div>
+
+<div class="question">
+<p>2. LLMs are trained on:</p>
+<label><input type="radio" name="q2" value="0"> Only images</label><br>
+<label><input type="radio" name="q2" value="0"> Math formulas</label><br>
+<label><input type="radio" name="q2" value="1"> Large text data</label><br>
+<label><input type="radio" name="q2" value="0"> Audio only</label>
+</div>
+
+<div class="question">
+<p>3. Developer of ChatGPT:</p>
+<label><input type="radio" name="q3" value="0"> Google</label><br>
+<label><input type="radio" name="q3" value="0"> Microsoft</label><br>
+<label><input type="radio" name="q3" value="1"> OpenAI</label><br>
+<label><input type="radio" name="q3" value="0"> IBM</label>
+</div>
+
+<div class="question">
+<p>4. DALL·E is used for:</p>
+<label><input type="radio" name="q4" value="0"> Writing code</label><br>
+<label><input type="radio" name="q4" value="1"> Generating images</label><br>
+<label><input type="radio" name="q4" value="0"> Playing music</label><br>
+<label><input type="radio" name="q4" value="0"> Data storage</label>
+</div>
+
+<div class="question">
+<p>5. Major recent AI trend:</p>
+<label><input type="radio" name="q5" value="0"> Typewriter automation</label><br>
+<label><input type="radio" name="q5" value="0"> Quantum farming</label><br>
+<label><input type="radio" name="q5" value="1"> Generative AI content</label><br>
+<label><input type="radio" name="q5" value="0"> Manual computing</label>
+</div>
+
+<div class="question">
+<p>6. AI in healthcare:</p>
+<label><input type="radio" name="q6" value="0"> Cooking food</label><br>
+<label><input type="radio" name="q6" value="1"> Disease diagnosis</label><br>
+<label><input type="radio" name="q6" value="0"> Driving buses</label><br>
+<label><input type="radio" name="q6" value="0"> Printing newspapers</label>
+</div>
+
+<div class="question">
+<p>7. AI chatbots used in:</p>
+<label><input type="radio" name="q7" value="1"> Customer support</label><br>
+<label><input type="radio" name="q7" value="0"> Agriculture</label><br>
+<label><input type="radio" name="q7" value="0"> Brick making</label><br>
+<label><input type="radio" name="q7" value="0"> Construction</label>
+</div>
+
+<div class="question">
+<p>8. AI interpretability focuses on:</p>
+<label><input type="radio" name="q8" value="0"> Robotics</label><br>
+<label><input type="radio" name="q8" value="1"> Transparency</label><br>
+<label><input type="radio" name="q8" value="0"> Animation</label><br>
+<label><input type="radio" name="q8" value="0"> Networking</label>
+</div>
+
+<div class="question">
+<p>9. AI ethics deals with:</p>
+<label><input type="radio" name="q9" value="0"> Hardware</label><br>
+<label><input type="radio" name="q9" value="0"> Speed</label><br>
+<label><input type="radio" name="q9" value="1"> Responsible usage</label><br>
+<label><input type="radio" name="q9" value="0"> Video editing</label>
+</div>
+
+<div class="question">
+<p>10. Key future AI skill:</p>
+<label><input type="radio" name="q10" value="0"> Avoid technology</label><br>
+<label><input type="radio" name="q10" value="0"> Memorizing everything</label><br>
+<label><input type="radio" name="q10" value="1"> Prompt engineering</label><br>
+<label><input type="radio" name="q10" value="0"> Ignoring digital tools</label>
+</div>
+
+<button type="button" onclick="calculateScore()">Submit Test</button>
+</form>
+
+<div id="result"></div>
+</div>
+
+<script>
+function calculateScore(){
+let score=0;
+const form=document.getElementById("quizForm");
+
+for(let i=1;i<=10;i++){
+let q=form["q"+i];
+for(let opt of q){
+if(opt.checked){ score+=Number(opt.value); }
+}
+}
+
+document.getElementById("result").innerHTML="Your Score: "+score+" / 10";
+}
+</script>
+
+</body>
+</html>
