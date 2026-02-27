@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Result</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#eef2f7;
+text-align:center;
+}
+
+header{
+background:#198754;
+color:white;
+padding:20px;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+margin-top:20px;
+}
+
+.score{
+font-size:22px;
+margin:10px 0;
+}
+
+.total{
+font-size:28px;
+font-weight:bold;
+color:#198754;
+margin-top:20px;
+}
+
+.grade{
+font-size:24px;
+font-weight:bold;
+margin-top:10px;
+}
+
+button{
+padding:12px 20px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#198754;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body onload="showResult()">
+
+<header>AI Foundation Course — Final Result</header>
+
+<div class="container">
+<div class="card">
+
+<h2>Test Scores</h2>
+
+<div class="score">Test 1: <span id="t1"></span>/10</div>
+<div class="score">Test 2: <span id="t2"></span>/10</div>
+<div class="score">Test 3: <span id="t3"></span>/10</div>
+<div class="score">Test 4: <span id="t4"></span>/10</div>
+<div class="score">Test 5: <span id="t5"></span>/10</div>
+
+<div class="total">Total Score: <span id="total"></span>/50</div>
+<div class="grade" id="grade"></div>
+
+<button onclick="resetScores()">Reset Result</button>
+
+</div>
+</div>
+
+<script>
+function showResult(){
+
+let t1 = Number(localStorage.getItem("test1")) || 0;
+let t2 = Number(localStorage.getItem("test2")) || 0;
+let t3 = Number(localStorage.getItem("test3")) || 0;
+let t4 = Number(localStorage.getItem("test4")) || 0;
+let t5 = Number(localStorage.getItem("test5")) || 0;
+
+document.getElementById("t1").innerText = t1;
+document.getElementById("t2").innerText = t2;
+document.getElementById("t3").innerText = t3;
+document.getElementById("t4").innerText = t4;
+document.getElementById("t5").innerText = t5;
+
+let total = t1+t2+t3+t4+t5;
+document.getElementById("total").innerText = total;
+
+let grade="";
+if(total>=45) grade="🏆 Grade: A+ Excellent";
+else if(total>=35) grade="🎖 Grade: A Very Good";
+else if(total>=25) grade="👍 Grade: B Good";
+else if(total>=15) grade="🙂 Grade: C Pass";
+else grade="❌ Fail — Try Again";
+
+document.getElementById("grade").innerText = grade;
+}
+
+function resetScores(){
+localStorage.clear();
+location.reload();
+}
+</script>
+
+</body>
+</html>
