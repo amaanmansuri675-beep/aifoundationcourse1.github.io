@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI History Test</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6fb;
+}
+
+header{
+background:#6f42c1;
+color:white;
+text-align:center;
+padding:18px;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:15px;
+}
+
+.question{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+button{
+width:100%;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#6f42c1;
+color:white;
+cursor:pointer;
+}
+
+button:hover{background:#5a32a3;}
+
+#result{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>AI History & Basics — Test 5</header>
+
+<div class="container">
+<form id="quizForm">
+
+<div class="question">
+<p>1. Father of Artificial Intelligence:</p>
+<label><input type="radio" name="q1" value="0"> Charles Babbage</label><br>
+<label><input type="radio" name="q1" value="0"> Alan Turing</label><br>
+<label><input type="radio" name="q1" value="1"> John McCarthy</label><br>
+<label><input type="radio" name="q1" value="0"> Bill Gates</label>
+</div>
+
+<div class="question">
+<p>2. AI term coined in:</p>
+<label><input type="radio" name="q2" value="0"> 1945</label><br>
+<label><input type="radio" name="q2" value="0"> 1950</label><br>
+<label><input type="radio" name="q2" value="1"> 1956</label><br>
+<label><input type="radio" name="q2" value="0"> 1965</label>
+</div>
+
+<div class="question">
+<p>3. Turing Test measures:</p>
+<label><input type="radio" name="q3" value="0"> Machine speed</label><br>
+<label><input type="radio" name="q3" value="0"> Human intelligence</label><br>
+<label><input type="radio" name="q3" value="1"> Machine intelligence</label><br>
+<label><input type="radio" name="q3" value="0"> Programming skills</label>
+</div>
+
+<div class="question">
+<p>4. Neural networks inspired by:</p>
+<label><input type="radio" name="q4" value="0"> Computer chips</label><br>
+<label><input type="radio" name="q4" value="1"> Human brain</label><br>
+<label><input type="radio" name="q4" value="0"> Robots</label><br>
+<label><input type="radio" name="q4" value="0"> Internet</label>
+</div>
+
+<div class="question">
+<p>5. Formal start of AI field:</p>
+<label><input type="radio" name="q5" value="0"> IBM Deep Blue</label><br>
+<label><input type="radio" name="q5" value="1"> Dartmouth Conference</label><br>
+<label><input type="radio" name="q5" value="0"> Launch of ChatGPT</label><br>
+<label><input type="radio" name="q5" value="0"> Google AI Lab</label>
+</div>
+
+<div class="question">
+<p>6. Defeated Garry Kasparov in 1997:</p>
+<label><input type="radio" name="q6" value="0"> AlphaGo</label><br>
+<label><input type="radio" name="q6" value="0"> IBM Watson</label><br>
+<label><input type="radio" name="q6" value="1"> Deep Blue</label><br>
+<label><input type="radio" name="q6" value="0"> ChatGPT</label>
+</div>
+
+<div class="question">
+<p>7. AI linked to Industrial Revolution:</p>
+<label><input type="radio" name="q7" value="0"> First</label><br>
+<label><input type="radio" name="q7" value="0"> Third</label><br>
+<label><input type="radio" name="q7" value="1"> Fourth</label><br>
+<label><input type="radio" name="q7" value="0"> Fifth</label>
+</div>
+
+<div class="question">
+<p>8. According to WEF 2023 AI will:</p>
+<label><input type="radio" name="q8" value="0"> Destroy jobs</label><br>
+<label><input type="radio" name="q8" value="0"> Only create jobs</label><br>
+<label><input type="radio" name="q8" value="1"> Transform job market</label><br>
+<label><input type="radio" name="q8" value="0"> End employment</label>
+</div>
+
+<div class="question">
+<p>9. Generative AI tools belong to:</p>
+<label><input type="radio" name="q9" value="0"> Hardware engineering</label><br>
+<label><input type="radio" name="q9" value="1"> Large Language Models</label><br>
+<label><input type="radio" name="q9" value="0"> Mechanical systems</label><br>
+<label><input type="radio" name="q9" value="0"> Robotics manufacturing</label>
+</div>
+
+<div class="question">
+<p>10. Responsible AI prevents:</p>
+<label><input type="radio" name="q10" value="0"> Innovation</label><br>
+<label><input type="radio" name="q10" value="0"> Automation</label><br>
+<label><input type="radio" name="q10" value="1"> Bias & misinformation</label><br>
+<label><input type="radio" name="q10" value="0"> Progress</label>
+</div>
+
+<button type="button" onclick="calculateScore()">Submit Test</button>
+</form>
+
+<div id="result"></div>
+</div>
+
+<script>
+function calculateScore(){
+let score=0;
+const form=document.getElementById("quizForm");
+
+for(let i=1;i<=10;i++){
+let q=form["q"+i];
+for(let opt of q){
+if(opt.checked){ score+=Number(opt.value); }
+}
+}
+
+document.getElementById("result").innerHTML="Your Score: "+score+" / 10";
+}
+</script>
+
+</body>
+</html>
